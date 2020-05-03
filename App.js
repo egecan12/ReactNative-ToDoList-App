@@ -10,6 +10,13 @@ export default function App() {
     { text: 'Buy some baked patato', key: '3' }
   ]);
 
+  const pressHandler = (key) => {
+    setTodos((prevTodos) => { 
+    
+        return prevTodos.filter(todo => todo.key != key)
+    })
+    
+    }
 
   return (
     <View style={styles.container}>
@@ -20,7 +27,7 @@ export default function App() {
           <FlatList
             data={todos}
             renderItem={({ item }) => (
-              <TodoItem item={item}/>
+              <TodoItem item={item} pressHandler={pressHandler}/>
             )}
           />
         </View>
@@ -28,6 +35,7 @@ export default function App() {
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
