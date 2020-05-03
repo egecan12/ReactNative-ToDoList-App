@@ -15,7 +15,7 @@ setText(val);
   return (
     <View style={styles.header}>
       <TextInput placeholder='new goal' style={styles.input} onChangeText={changeHandler}/>
-      <Button onPress={ () => submitHandler(text)} title='add' color='#eb345e'/>
+      <Button onPress={ () => submitHandler(text)} title='add' color='coral'/>
     </View>
 
   );
@@ -23,7 +23,7 @@ setText(val);
 
 const styles = StyleSheet.create({
   input: {
-      
+
     marginBottom:10,
     paddingVertical:6,
     paddingHorizontal:7,

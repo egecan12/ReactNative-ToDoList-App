@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View, FlatList, Alert} from 'react-native';
 import Header from './components/header';
 import TodoItem from './components/todoItems';
 import AddTodo from './components/addTodo'
@@ -7,7 +7,7 @@ import AddTodo from './components/addTodo'
 
 export default function App() {
   const [todos, setTodos] = useState([
-    { text: 'get money', key: '1' },
+    { text: 'make some money', key: '1' },
     { text: 'eat some fish', key: '2' },
     { text: 'Buy some baked patato', key: '3' }
   ]);
@@ -21,12 +21,18 @@ export default function App() {
     }
 
     const submitHandler = (text) => {
-
+      
+      
+      if(text.length >3){
       setTodos((prevTodos) => {
         
         return [{text:text, key: Math.random().toString()},...prevTodos]
 
       })
+    }
+    else{
+      Alert.alert('OOPS!', 'Minumum 3 character please,', [{text: 'understood', onPress: () => console.log('alert consoled')}])
+    }
 
     }
 
