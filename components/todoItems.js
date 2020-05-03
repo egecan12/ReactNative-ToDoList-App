@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet,TouchableOpacity } from 'react-native';
 
-export default function TodoItem() {
+export default function TodoItem({item}) {
   return (
     <View >
       <TouchableOpacity>
-         <Text>{Item.Text}</Text>
+         <Text style={styles.item}>{item.text}</Text>
       </TouchableOpacity>
     </View>
   );
